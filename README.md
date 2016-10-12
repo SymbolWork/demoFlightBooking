@@ -1,0 +1,1 @@
+This demo application using angular 1.x, nodejs 5.11 and mysql
