@@ -1,0 +1,203 @@
+ <div class="container">
+ 	<div class="col-md-12 col-sm-12 hidden-xs visible-stb search-result-meta">
+		<div class="row query">
+		  <div class="col-lg-6">
+		    <div class="input-group">
+		      <span class="input-group-addon">
+		        <select ng-model="homeCtrl.flightSearch.returnTrip">
+		        	<option value="true">Round Trip</option>
+		        	<option value="false">One Way</option>
+		        </select>
+		      </span>
+		       <autocomplete ng-model="homeCtrl.flightSearch.travelFrom" attr-placeholder="From" click-activation="true" data="homeCtrl.airportList" on-select="homeCtrl.manageAirPortList"></autocomplete>
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		  <div class="col-lg-6">
+		    <div class="input-group">
+		      <span class="input-group-addon">
+		        To
+		      </span>
+		       <autocomplete ng-model="homeCtrl.flightSearch.travelTo" attr-placeholder="To" click-activation="true" data="homeCtrl.airportList" on-select="homeCtrl.manageAirPortList"></autocomplete>
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		</div>
+		<div class="row query">
+		  <div class="col-lg-6">
+		    <div class="input-group">
+		      <span class="input-group-addon">
+		        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      </span>
+            <input type="date" ng-model="homeCtrl.flightSearch.oneSideDate" autocomplete="off" min="{{homeCtrl.fromDate}}" ng-change="homeCtrl.setReturnDate()" style="color: black;"/>
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		  <div class="col-lg-6">
+		    <div class="input-group">
+		      <span class="input-group-addon">
+		        To
+		      </span>
+              <input type="date" ng-model="homeCtrl.flightSearch.returnDate" autocomplete="off" min="{{homeCtrl.toDate}}" style="color: black;"/>
+
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		</div>
+		<div class="row range">
+			<span class="label">Price Range: </span>
+			<span style="display: inline-block; width: 200px;" range-slider min="0" max="50000" model-min="demo1.min" model-max="demo1.max" ></span>
+		</div>
+		<div>
+			<button type="button" ng-click="homeCtrl.searchFlights()">Search</button>
+		</div> 		<!-- <div class="row">
+	 		<div class="col-md-4 col-sm-4">
+				<span class="modify_captions">ROUND-TRIP</span>
+	            <p class="modify_city_name modify_txt ng-binding">Pune to Nagpur</p>
+	 		</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="col-md-5">
+					<span class="modify_captions">Adult</span>
+					<p class="check-dates modify_txt">
+						<span class="glyphicon glyphicon-calendar"></span>
+	                     <span class="date">29</span>
+	                     <span class="month_day">
+							<span class="month_day ng-binding">Oct 16</span>
+							<span class="month_day ng-binding">Sat</span>
+						</span>
+					</p>
+	 			</div>
+	 			<div class="col-md-2 text-center">
+					<p class="arrow_greater">&gt;</p>
+	 			</div>
+				<div class="col-md-5">
+						<span class="modify_captions">Return</span>
+						<p class="check-dates modify_txt">
+							<span class="glyphicon glyphicon-calendar"></span> 
+							<span class="date ng-binding">03</span> 
+							 <span class="month_day RobotLight ">
+								<span class="month_day ng-binding">Nov 16</span>
+								<span class="month_day ng-binding">Thu</span>
+							</span>
+
+						</p>
+	 			</div>
+	 		</div>
+	 		<div class="col-md-4 col-sm-4">
+	 			<div class="col-md-4">
+					<span class="modify_captions">Adult</span>
+					<p class="check-dates modify_txt">
+						<span class="date ng-binding">02</span>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<span class="modify_captions">Adult</span>
+					<p class="check-dates modify_txt">
+						<span class="date ng-binding">--</span>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<span class="modify_captions">Adult</span>
+					<p class="check-dates modify_txt">
+						<span class="date ng-binding">--</span>
+					</p>
+				</div>
+	 		</div>
+ 		</div> -->
+ 	</div>
+ 	<div>
+ 		<input type="email" placeholder="Email Id" ng-model="homeCtrl.userEmail" style="color:black">
+ 	</div>
+ 	<div class="col-md-12 col-sm-12 search-result-flights">
+
+ 		<div class="row search-result-flight-details flights-header">
+	 		<div class="col-md-6">
+				<p class="clearfix">
+					<span class="glyphicon glyphicon-plane"></span>
+					<span class="flight_details">
+						<strong class="ng-binding">{{homeCtrl.travelInfo.from}}</strong> 
+						to 
+						<strong class="ng-binding">{{homeCtrl.travelInfo.to}}</strong> - {{homeCtrl.travelInfo.fromDate}} 
+					</span>
+					<span class="light_gray">{{homeCtrl.inFlight.length}} Flights found</span>
+				</p>
+	 		</div>
+	 		<div class="col-md-6" ng-show="homeCtrl.outFlight">
+				<p class="clearfix">
+					<span class="glyphicon glyphicon-plane"></span>
+					<span class="flight_details">
+						<strong class="ng-binding">{{homeCtrl.travelInfo.to}}</strong> 
+						to 
+						<strong class="ng-binding">{{homeCtrl.travelInfo.from}}</strong> - {{homeCtrl.travelInfo.toDate}}  
+					</span>
+					<span class="light_gray">{{homeCtrl.outFlight.length}} Flights found</span>
+				</p>
+	 		</div>
+ 		</div>
+ 		<div class="row search-result-flight-header">
+ 			<div class="col-md-6">
+				<div class="col-md-3 col-sm-3">
+					Flight
+				</div>
+				<div class="col-md-3 col-sm-3">
+					DEPARTURE
+				</div>
+				<div class="col-md-3 col-sm-3">
+					ARRIVAL
+				</div>
+				<div class="col-md-3 col-sm-3">
+					PRICE
+				</div>
+ 			</div>
+ 			<div class="col-md-6" ng-show="homeCtrl.outFlight">
+				<div class="col-md-3 col-sm-3">
+					Flight
+				</div>
+				<div class="col-md-3 col-sm-3">
+					DEPARTURE
+				</div>
+				<div class="col-md-3 col-sm-3">
+					ARRIVAL
+				</div>
+				<div class="col-md-3 col-sm-3">
+					PRICE
+				</div>
+ 			</div>
+ 		</div>
+		<div class="row search-result-flight-details">
+			<div class="col-md-6">
+	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.inFlight">
+					<div class="col-md-3 col-sm-3">
+						<p><span class="flght_name">{{flights.airlines}} </span><br/><span class="flght_number">AI-{{flights.id}}</span></p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="time_info">{{flights.depart}}</p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="time_info">{{flights.arrive}}</p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="price"><span class="INR">Rs.</span> {{flights.price}}</p>
+						<span>Available Seats {{flights.remainingSeats}}</span></br>
+						<button class="btn-primary" ng-click="homeCtrl.bookTicket(flights.id, $index, 'in')">book</button>
+					</div>			
+	 			</div>
+ 			</div>
+ 			<div class="col-md-6" ng-show="homeCtrl.outFlight">
+	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.outFlight">
+					<div class="col-md-3 col-sm-3">
+						<p><span class="flght_name">{{flights.airlines}} </span><br/><span class="flght_number">AI-{{flights.id}}</span></p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="time_info">{{flights.depart}}</p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="time_info">{{flights.arrive}}</p>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<p class="price"><span class="INR">Rs.</span> {{flights.price}}</p>
+						<span>Available Seats {{flights.remainingSeats}}</span></br>
+						<button class="btn-primary" ng-click="homeCtrl.bookTicket(flights.id, $index, 'out')">book</button>
+					</div>			
+	 			</div>
+ 			</div>
+ 		</div>
+ 	</div>
+
+</div>

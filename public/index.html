@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="myapp">
+  <head>
+     <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>Book Your Airline Ticket</title>
+<!--     <base href="./">
+ -->    <!-- Bootstrap core CSS -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/css/aliens/autocomplete.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+<div class="main-container">
+
+    <!-- Begin page content -->
+    <div ui-view="header"></div>
+    <div ui-view="main"></div>
+</div>
+
+    <script src="assets/js/angular/angular.min.js"></script>
+    <script src="assets/js/autocomplete.js"></script>
+    <script src="assets/js/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    
+    <!--share modules-->
+    
+    <script src="app/app.js"></script>
+    <script src="app/router.js"></script>
+
+    <!-- main modules-->
+    <script src="app/config/controller.js"></script>
+    <script src="app/config/factory.js"></script>
+    <script src="app/config/directive.js"></script>
+    <script src="app/config/routes.consts.js"></script>
+
+
+    <!-- controllers-->
+    <script src="app/components/search/controller.search.js"></script>
+    <script src="app/components/home/controller.home.js"></script>
+    <script src="app/components/header/controller.header.js"></script>
+
+    <!-- factories-->
+    <script src="app/shared/factory.flight.js"></script>
+    <script src="app/shared/factory.httpService.js"></script>
+
+    <!--directives-->
+    <script src="app/shared/directive.common.js"></script>
+    <script src="app/components/shares/directive.shares.js"></script>
+
+  </body>
+</html>

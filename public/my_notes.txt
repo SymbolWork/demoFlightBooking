@@ -1,0 +1,5 @@
+1. manage user address and location for suggested articles on area related foods address have to store in lang & lat.
+2. add professional info fields in register page.
+3. have to test current flow and validations.
+4. confirm password validation must be on clinet side only.
+5. agree terms and condition validation is also on client side only.

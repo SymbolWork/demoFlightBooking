@@ -1,0 +1,31 @@
+{
+  "name": "my-node-structure",
+  "version": "0.0.1",
+  "description": "my node ioc structure",
+  "main": "app.js",
+  "author": "prateek sarve",
+  "license": "MIT",
+  "repository": {},
+  "dependencies": {
+    "bluebird": "3.3.5",
+    "cheerio": "0.20.0",
+    "gulp-jshint": "2.0.1",
+    "gulp-mocha": "2.2.0",
+    "hat": "0.0.3",
+    "jshint": "2.9.2",
+    "md5": "2.1.0",
+    "mssql": "3.3.0",
+    "nodemailer": "2.4.1",
+    "nodemailer-smtp-transport": "2.5.0",
+    "os": "0.1.1",
+    "pg": "4.5.5",
+    "redis": "2.6.0-2",
+    "restify": "4.0.4",
+    "sequelize": "3.22.0",
+    "should": "9.0.0",
+    "supertest": "1.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
