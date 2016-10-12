@@ -1,0 +1,38 @@
+ <div class="container">
+	 <div class="col-xs-12 col-md-12">
+	Source: <autocomplete ng-model="adminCtrl.addFligthForm.travelFrom" attr-placeholder="From" click-activation="true" data="adminCtrl.airportList" on-select="adminCtrl.manageAirPortList"></autocomplete>
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Destination:  <autocomplete ng-model="adminCtrl.addFligthForm.travelTo" attr-placeholder="To" click-activation="true" data="adminCtrl.airportList" on-select="adminCtrl.manageAirPortList"></autocomplete>
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Depart Time: <input type="time" style="color: black;" ng-model="adminCtrl.addFligthForm.departTime">
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Arrive Time: <input type="time" style="color: black;" ng-model="adminCtrl.addFligthForm.arriveTime">
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Week Schedule: <select class="col-xs-12 col-md-12" ng-model="adminCtrl.addFligthForm.weekSchedule">
+	 		<option value="0,1,2,3,4,5,6">Daily</option>
+	 		<option value="0">Sunday</option>
+	 		<option value="1">Monday</option>
+	 		<option value="2">Tuesday</option>
+	 		<option value="3">Wednesday</option>
+	 		<option value="4">Thursday</option>
+	 		<option value="5">Friday</option>
+	 		<option value="6">Saturday</option>
+	 	</select>
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Price: <input style="color: black;" type="number" ng-model="adminCtrl.addFligthForm.price">
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Airline: <input style="color: black;" type="text" ng-model="adminCtrl.addFligthForm.airline">
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	Total Seats: <input style="color: black;" type="text" ng-model="adminCtrl.addFligthForm.totalSeats">
+	 </div>
+	 <div class="col-xs-12 col-md-12">
+	 	<button class="btn btn-primary btn-lg" type="button" style="float: right; margin-top: 30px;" ng-click="adminCtrl.addFlight()">Add Flight</button>
+	 </div>
+</div>
