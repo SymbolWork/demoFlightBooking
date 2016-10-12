@@ -15,6 +15,7 @@
     "jshint": "2.9.2",
     "md5": "2.1.0",
     "mssql": "3.3.0",
+    "mysql": "2.11.1",
     "nodemailer": "2.4.1",
     "nodemailer-smtp-transport": "2.5.0",
     "os": "0.1.1",
