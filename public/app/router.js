@@ -57,4 +57,17 @@ router
                     }
                 }
             })
+            .state('root.admin', {
+                url :'/admin',
+                views :  {
+                    'main@': {
+                        controller: 'myapp.controller.admin',
+                        controllerAs: 'adminCtrl',
+                        templateProvider: ['$templateRequest',
+                        function($templateRequest) {
+                            return $templateRequest("app/components/admin/admin.html");
+                        }]
+                    }
+                }
+            })
         }])

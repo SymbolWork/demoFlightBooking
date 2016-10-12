@@ -73,6 +73,9 @@ function searchCtl($scope, $state, flightService,routesService,httpService) {
         })
     }
     
+    self.addFlights = function() {
+        $state.go('root.admin');
+    }
 
   init();
 }]);

@@ -50,6 +50,13 @@ class FlightController {
       })
 
   }
+
+  addFlights(req,res) {
+    let fligthObj = [req.body.travelFrom,req.body.travelTo,req.body.departTime,req.body.arriveTime,req.body.weekSchedule,req.body.price,req.body.airline,req.body.totalSeats];
+     oFlightModel.addFlights(fligthObj).then(function(data) {
+        res.send({"response":"success"});
+      })
+  }
   
 }
 

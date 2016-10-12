@@ -35,7 +35,7 @@
 		      <span class="input-group-addon">
 		        To
 		      </span>
-              <input type="date" ng-model="homeCtrl.flightSearch.returnDate" autocomplete="off" min="{{homeCtrl.toDate}}" style="color: black;"/>
+              <input ng-show="homeCtrl.flightSearch.returnTrip == 'true'" type="date" ng-model="homeCtrl.flightSearch.returnDate" autocomplete="off" min="{{homeCtrl.toDate}}" style="color: black;"/>
 
 		    </div><!-- /input-group -->
 		  </div><!-- /.col-lg-6 -->

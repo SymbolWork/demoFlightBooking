@@ -5,6 +5,7 @@ routesFactory.factory('myapp.factories.routesService', function() {
 		"getaccessToken" : baseUrl+"getAuthToken",
 		"getAirports" : baseUrl+"getAirports",
 		"getFlights" : baseUrl+"getFlights",
-		"bookTicket" : baseUrl+"bookTicket"
+		"bookTicket" : baseUrl+"bookTicket",
+		"addFlights" : baseUrl+"addFlights"
 	}
 })

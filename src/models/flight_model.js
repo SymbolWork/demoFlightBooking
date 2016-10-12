@@ -21,6 +21,10 @@ class UsersModel {
         return oInteractor.save('flight_mgmnt','booking_info',["user_email","flight_id","booking_time"],[emailId,flightId,new Date()]); 
    }
 
+   addFlights (fligthObj) {
+        return oInteractor.save('flight_mgmnt','flights',["travel_from","travel_to","depart","arrive","routine","price","airlines","total_seats"],fligthObj); 
+   }
+
  }
 
 module.exports = UsersModel;
