@@ -13,6 +13,7 @@
     <link href="assets/css/style.css" rel="stylesheet"/>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="assets/css/aliens/autocomplete.css" rel="stylesheet"/>
+    <link href="assets/css/aliens/angular.rangeSlider.css" rel="stylesheet"/>
 
   </head>
   <body>
@@ -23,9 +24,11 @@
     <div ui-view="main"></div>
 </div>
 
+    <script src="assets/js/jquery1.11.js"></script>
     <script src="assets/js/angular/angular.min.js"></script>
     <script src="assets/js/autocomplete.js"></script>
     <script src="assets/js/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="assets/js/angular.rangeSlider.js"></script>
 
     
     <!--share modules-->
@@ -37,6 +40,7 @@
     <script src="app/config/controller.js"></script>
     <script src="app/config/factory.js"></script>
     <script src="app/config/directive.js"></script>
+    <script src="app/config/filters.js"></script>
     <script src="app/config/routes.consts.js"></script>
 
 
@@ -49,6 +53,9 @@
     <!-- factories-->
     <script src="app/shared/factory.flight.js"></script>
     <script src="app/shared/factory.httpService.js"></script>
+
+     <!-- filters-->
+    <script src="app/components/home/range.filter.js"></script>
 
     <!--directives-->
     <script src="app/shared/directive.common.js"></script>

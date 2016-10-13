@@ -1,11 +1,15 @@
 'use strict'
-var controller = angular.module('myapp.controller.home', []);
+var controller = angular.module('myapp.controller.home', ['ui-rangeSlider']);
 
 controller.controller('myapp.controller.home', ['$scope', '$state','myapp.factories.flightService','myapp.factories.routesService','myapp.factories.httpService','$stateParams',
 function ($scope, $state, flightService,routesService,httpService, $stateParams) {
       var self = this;
       self.flightSearch = {};
       var availableAirports = {};
+      self.priceRangeBar = {
+          min: 20,
+          max: 80
+      };
       var init = function() {
       	self.airportList = [];
       	self.flightSearch.returnTrip = "true";

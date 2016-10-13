@@ -3,7 +3,8 @@ var app = angular.module('myapp', [
     'myapp.router',
     'myapp.controllers',
 	  'myapp.factories',
-    'myapp.directive'
+    'myapp.directive',
+    'myapp.filters'
 ]);
  Array.prototype.remove = function(val, all) {
         var i, removedItems = [];

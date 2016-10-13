@@ -1,5 +1,6 @@
  <div class="container">
- 	<div class="col-md-12 col-sm-12 hidden-xs visible-stb search-result-meta">
+ <div class="row query">
+ 	<div class="col-md-12 col-sm-12 visible-stb search-result-meta">
 		<div class="row query">
 		  <div class="col-lg-6">
 		    <div class="input-group">
@@ -39,13 +40,13 @@
 
 		    </div><!-- /input-group -->
 		  </div><!-- /.col-lg-6 -->
-		</div>
-		<div class="row range">
+		<div class="row range col-lg-12">
 			<span class="label">Price Range: </span>
-			<span style="display: inline-block; width: 200px;" range-slider min="0" max="50000" model-min="demo1.min" model-max="demo1.max" ></span>
+			<div range-slider min="0" max="100000" model-min="homeCtrl.priceRangeBar.min" model-max="homeCtrl.priceRangeBar.max" attach-handle-values="true" show-values="true"></div>
 		</div>
-		<div>
-			<button type="button" ng-click="homeCtrl.searchFlights()">Search</button>
+		<div class="col-lg-12">
+			<button type="button" ng-click="homeCtrl.searchFlights()" style="margin-top: 24px; float: right;">Search
+			</button>
 		</div> 		<!-- <div class="row">
 	 		<div class="col-md-4 col-sm-4">
 				<span class="modify_captions">ROUND-TRIP</span>
@@ -101,7 +102,9 @@
 	 		</div>
  		</div> -->
  	</div>
- 	<div>
+ 	</div>
+ 	</div>
+ 	<div lass="col-md-12 col-sm-12" style="margin-top:30px">
  		<input type="email" placeholder="Email Id" ng-model="homeCtrl.userEmail" style="color:black">
  	</div>
  	<div class="col-md-12 col-sm-12 search-result-flights">
@@ -162,7 +165,7 @@
  		</div>
 		<div class="row search-result-flight-details">
 			<div class="col-md-6">
-	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.inFlight">
+	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.inFlight | rangeFilter:homeCtrl.priceRangeBar">
 					<div class="col-md-3 col-sm-3">
 						<p><span class="flght_name">{{flights.airlines}} </span><br/><span class="flght_number">AI-{{flights.id}}</span></p>
 					</div>
@@ -180,7 +183,7 @@
 	 			</div>
  			</div>
  			<div class="col-md-6" ng-show="homeCtrl.outFlight">
-	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.outFlight">
+	 			<div class="search-result-flight-onward" ng-repeat="flights in homeCtrl.outFlight | rangeFilter:homeCtrl.priceRangeBar">
 					<div class="col-md-3 col-sm-3">
 						<p><span class="flght_name">{{flights.airlines}} </span><br/><span class="flght_number">AI-{{flights.id}}</span></p>
 					</div>
